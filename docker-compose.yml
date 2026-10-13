@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  pos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kiropos_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - JWT_SECRET=kiropos-production-secret-jwt-key-2026
+    volumes:
+      - pos_data:/app/server/data
+
+volumes:
+  pos_data:
+    driver: local

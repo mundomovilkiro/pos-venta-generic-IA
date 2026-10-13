@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Production build artifacts
+client/dist/
+dist/
+
+# Environment and secrets
+.env
+.env.local
+*.env
+
+# SQLite local databases and logs
+*.sqlite-journal
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

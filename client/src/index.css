@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-sky-500 selection:text-white transition-colors duration-200;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Professional tabular numbers for all prices and financial figures */
+  .font-mono, [data-tabular="true"] {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Taste-Skill Dark Mode System */
+.dark {
+  color-scheme: dark;
+}
+
+.dark,
+.dark html,
+.dark body,
+.dark #root,
+.dark main,
+.dark .bg-\[\#f8fafc\] {
+  background-color: #0b0f17 !important;
+  color: #f1f5f9 !important;
+}
+
+.dark header {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-color: #1e293b !important;
+}
+
+.dark .bg-white {
+  background-color: #111827 !important;
+  color: #f8fafc;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-50\/80,
+.dark .bg-slate-50\/70,
+.dark .bg-slate-100,
+.dark .bg-slate-100\/70 {
+  background-color: #1e293b !important;
+  color: #f1f5f9;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-200\/80,
+.dark .border-slate-200\/70,
+.dark .border-slate-200\/60,
+.dark .border-slate-300,
+.dark .border-slate-100 {
+  border-color: #334155 !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25) !important;
+}
+
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-slate-200:hover {
+  background-color: #334155 !important;
+}
+
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #1e293b !important;
+}
+
+/* Taste-Skill refined scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Thermal Printer CSS (@media print) */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Thermal roll styling */
+  .thermal-receipt-container {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    padding: 2mm !important;
+    color: black !important;
+    background: white !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+  }
+
+  .thermal-80mm {
+    width: 76mm !important;
+    max-width: 76mm !important;
+  }
+
+  .thermal-58mm {
+    width: 54mm !important;
+    max-width: 54mm !important;
+    font-size: 10px !important;
+  }
+
+  @page {
+    margin: 0;
+    size: auto;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
